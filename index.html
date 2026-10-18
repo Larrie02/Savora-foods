@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savora Foods | Nigerian Food in Port Harcourt</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="promo">5% OFF ONLINE ONLY</div>
+<header>
+  <a class="logo" href="#home">Savora Foods</a>
+  <nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About Us</a><a href="#contact">Contact Us</a><a class="save" href="#offer">Save 5% Off</a></nav>
+  <button class="btn" onclick="openCart()">ORDER NOW <span id="cnt"></span></button>
+</header>
+
+<div class="hero" id="home">
+  <svg viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><radialGradient id="hg" cx="65%" cy="45%" r="70%"><stop offset="0" stop-color="#e59a4b"/><stop offset="1" stop-color="#4a2814"/></radialGradient><clipPath id="plate"><rect x="700" y="60" width="320" height="400" rx="20"/></clipPath></defs>
+    <rect width="1200" height="520" fill="url(#hg)"/>
+    <g opacity=".25" stroke="#2a1508" stroke-width="3"><path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200"/></g>
+    <rect x="710" y="72" width="320" height="400" rx="20" fill="#000" opacity=".28"/><image href="images/hero.jpg" x="700" y="60" width="320" height="400" preserveAspectRatio="xMidYMid slice" clip-path="url(#plate)"/>
+    <circle cx="1120" cy="90" r="60" fill="#c4705e" opacity=".5"/><circle cx="1060" cy="470" r="46" fill="#f2c230" opacity=".5"/>
+  </svg>
+  <div class="txt"><h1>Home-style Nigerian food, made fresh in Port Harcourt</h1><p>Smoky jollof, spicy suya and rich soups, cooked to order and delivered across the city.</p><a class="btn" href="#menu">See the menu</a></div>
+</div>
+
+<section id="menu">
+  <div class="head"><div class="eyebrow">Our favorites</div><h2>Most Loved Dishes</h2><p>Handpicked selections that keep our customers coming back for more.</p></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="about">
+  <div class="eyebrow">About us</div><h2>Our Story</h2>
+  <p>Savora Foods started in Port Harcourt with one idea: a plate of Nigerian food should taste like it came from a family kitchen. Our cooks prepare Jollof Rice with Chicken, Beef Suya, Egusi with Pounded Yam and Pepper Soup from scratch, every day.</p>
+  <p>We buy fresh peppers, tomatoes, fish and meat from local markets and cook in small batches. Not sure what you want? Try our Jollof Rice and Chicken, or add Fried Plantain on the side.</p>
+</section>
+
+<section id="offer">
+  <div class="offer"><span class="pill">5% OFF ONLINE ONLY</span><h2>Save 5% When Ordering Online</h2><p>Order through our online menu and 5% comes off your total automatically. No coupon code needed.</p><button class="btn" onclick="openCart()">Order Online</button></div>
+</section>
+
+<section id="contact" style="text-align:center">
+  <div class="eyebrow">Ready to order?</div><h2>Your next favorite meal is just a message away</h2>
+  <p style="color:var(--mute)">Questions, party trays or office lunches? Send us a note.</p>
+  <div class="contact">
+    <input id="cn" placeholder="Your name" aria-label="Your name">
+    <input id="cp" placeholder="Phone number" aria-label="Phone number" inputmode="tel">
+    <textarea id="cm" rows="3" placeholder="How can we help?" aria-label="Message"></textarea>
+    <p id="cmsg" style="color:var(--accent);min-height:24px"></p>
+    <button class="btn" onclick="sendMsg()">Send message</button>
+  </div>
+</section>
+
+<footer>
+  <div class="cols">
+    <div><div class="logo">Savora Foods<i>.</i></div></div>
+    <div><h4>Menu</h4><p><a href="#menu">View Full Menu</a></p></div>
+    <div><h4>Hours</h4><p><b>Monday - Saturday</b><br>9:00 am - 10:00 pm</p><p><b>Sunday</b><br>12:00 pm - 9:00 pm</p></div>
+    <div><h4>Contact</h4><p>24 Aba Road, GRA Phase 2<br>Port Harcourt, Rivers State</p><p>+234 800 000 0000</p></div>
+  </div>
+  <div class="pop"><h4>Popular Searches</h4><span>Nigerian Food GRA</span><span>Suya Port Harcourt</span><span>Jollof Rice Rumuola</span><span>Pepper Soup Trans Amadi</span><span>Egusi Soup Old GRA</span><span>Food Delivery Rumuokoro</span><span>Nigerian Food Port Harcourt</span></div>
+  <div class="copy">© 2026 Savora Foods, Port Harcourt</div>
+</footer>
+
+<div id="shade" onclick="closeCart()"></div>
+<aside id="drawer" aria-label="Your order">
+  <button class="x" onclick="closeCart()" aria-label="Close">×</button>
+  <h3 style="font-size:30px;margin-bottom:8px">Your order</h3>
+  <div id="items"></div>
+  <div class="tot"><span>Subtotal</span><span id="sub"></span></div>
+  <div class="tot"><span>Online discount (5%)</span><span id="dis"></span></div>
+  <div class="tot big"><span>Total</span><span id="tot"></span></div>
+  <input id="oa" placeholder="Delivery address in Port Harcourt" aria-label="Delivery address">
+  <button class="btn" style="margin-top:14px" onclick="checkout()">Send order on WhatsApp</button>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
